@@ -10,7 +10,7 @@ Je moet wel het volgende instaleeren via pip:
 - pip install pyfirmata
 
 
-In de Arduino IDE open je -> Tools -> Manage Libraries
+In de Arduino IDE open je -> Tools -> Manage Libraries: 
 Zoek naar 'LiquidCrystal_I2C' en installeer de versie van 'Frank de Brabander'
 
 In de arduino IDE open je de .ino die in de StandaardFirmata map staat en upload je deze naar je arduino.

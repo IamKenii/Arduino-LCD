@@ -9,11 +9,11 @@ LCD_SET_CURSOR = 0x03
 
 message = "Froggg"
 
-message_bytes = [ord(char) for char in message]
+text = [ord(char) for char in message]
 board.send_sysex(LCD_SET_CURSOR, [0, 0])
-board.send_sysex(LCD_PRINT, message_bytes)
+board.send_sysex(LCD_PRINT, text)
 
 # Clear the LCD
-# arduino.send_sysex(LCD_CLEAR, [])
+board.send_sysex(LCD_CLEAR, [])
 
 board.exit()

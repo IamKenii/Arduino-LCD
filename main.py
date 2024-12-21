@@ -1,19 +1,16 @@
-import pyfirmata2
+from pyfirmata2 import Arduino, util
+import time
+from LCD import LCD
 
-board = pyfirmata2.Arduino('COM3')
-board.samplingOn(180)
 
-LCD_PRINT = 0x01
-LCD_CLEAR = 0x02
-LCD_SET_CURSOR = 0x03
+# Vervang 'COM5' door de poort die je Arduino gebruik
+board = Arduino('COM3')
+board.samplingOn('180')
+lcd = LCD(board)
 
-message = "Froggg"
-
-text = [ord(char) for char in message]
-board.send_sysex(LCD_SET_CURSOR, [0, 0])
-board.send_sysex(LCD_PRINT, text)
-
-# Clear the LCD
-board.send_sysex(LCD_CLEAR, [])
-
-board.exit()
+lcd.clear()
+lcd.print("Hello World!")
+lcd.set_cursor(0, 1)
+lcd.print("123")
+while True:
+    time.sleep(1)

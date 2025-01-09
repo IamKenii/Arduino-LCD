@@ -5,7 +5,7 @@ from LCD import LCD
 
 # Vervang 'COM5' door de poort die je Arduino gebruik
 board = Arduino('COM3')
-board.samplingOn(180)
+board.samplingOn('180')
 lcd = LCD(board)
 
 lcd.clear()
